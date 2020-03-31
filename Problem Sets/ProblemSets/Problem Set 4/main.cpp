@@ -118,6 +118,8 @@ int main(int argc, char** argv) {
 	checkResultsExact(&h_outputVals[0], &h_yourOutputVals[0], numElems);
 	checkResultsExact(&h_outputPos[0], &h_yourOutputPos[0], numElems);
 
+	std::cout << "PASS" << std::endl;
+
 	checkCudaErrors(cudaFree(inputVals));
 	checkCudaErrors(cudaFree(inputPos));
 	checkCudaErrors(cudaFree(outputVals));

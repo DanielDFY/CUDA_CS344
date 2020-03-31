@@ -34,7 +34,7 @@ void reference_calculation(unsigned int* inputVals, unsigned int* inputPos, unsi
 		for (unsigned int j = 1; j < numBins; ++j) {
 			binScan[j] = binScan[j - 1] + binHistogram[j - 1];
 		}
-		//printf("reference: %d %d %d\n", numElems, binScan[0], binScan[1]);
+		//printf("reference: %d %d\n", binScan[0], binScan[1]);
 		//Gather everything into the correct location
 		//need to move vals and positions
 		for (unsigned int j = 0; j < numElems; ++j) {

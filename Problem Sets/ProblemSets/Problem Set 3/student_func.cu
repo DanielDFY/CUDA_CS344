@@ -191,9 +191,12 @@ __global__ void exclusive_scan_kernel(unsigned int* const g_cdf, unsigned int* g
 		g_cdf[idx + 1] = temp;
 }
 
-__global__ void add_pre_sum(unsigned int* g_cdf, unsigned int* g_pre_sum) {
+__global__ void add_pre_sum_kernel(unsigned int* g_cdf, unsigned int* g_pre_sum, const size_t size) {
     // add sum of precious blocks to each element in current block to get final exclusive scan
     int tid = threadIdx.x + blockIdx.x * blockDim.x;
+    if (tid >= size)
+        return;
+	
     if (tid != 0)
         g_cdf[tid] += g_pre_sum[(tid - 1) / blockDim.x];
 }
@@ -253,7 +256,7 @@ void exclusive_scan(unsigned int* const d_cdf, unsigned int* const d_bins, const
 
 	// do local scan for each block
     const size_t shared_mem_size = thread_per_block * sizeof(unsigned int);
-    exclusive_scan_kernel<<<num_block, thread_per_block, shared_mem_size >>>(d_cdf, d_bins, numBins);
+    exclusive_scan_kernel<<<num_block, thread_per_block, shared_mem_size>>>(d_cdf, d_bins, numBins);
     cudaDeviceSynchronize(); checkCudaErrors(cudaGetLastError());
 
     const size_t histo_mem_size = numBins * sizeof(unsigned int);
@@ -277,7 +280,7 @@ void exclusive_scan(unsigned int* const d_cdf, unsigned int* const d_bins, const
     checkCudaErrors(cudaMemcpy(d_pre_sum, h_pre_sum, pre_sum_mem_size, cudaMemcpyHostToDevice));
 
 	// add local scan of previous blocks to get global scan
-    add_pre_sum<<<num_block, thread_per_block>>>(d_cdf, d_pre_sum);
+    add_pre_sum_kernel<<<num_block, thread_per_block>>>(d_cdf, d_pre_sum, numBins);
     cudaDeviceSynchronize(); checkCudaErrors(cudaGetLastError());
 
     free(h_cdf);
