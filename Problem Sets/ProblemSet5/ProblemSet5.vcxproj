@@ -12,7 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="..\ProblemSets\Problem Set 5\main.cu" />
-    <CudaCompile Include="..\ProblemSets\Problem Set 5\student.cu" />
+    <CudaCompile Include="..\ProblemSets\Problem Set 5\student_func.cu" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ProblemSets\Problem Set 5\reference_calc.cpp" />
