@@ -91,6 +91,8 @@ int main(void)
     //Now do the comparison
     checkResultsExact(h_refHisto, h_studentHisto, numBins);
 
+    std::cout << "PASS" << std::endl;
+
     delete[] h_vals;
     delete[] h_refHisto;
     delete[] h_studentHisto;
