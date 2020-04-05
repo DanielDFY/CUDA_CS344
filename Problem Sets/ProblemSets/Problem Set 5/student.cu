@@ -31,10 +31,9 @@
 #define THREADS_PER_BLOCK 1024
 #define VALS_PER_THREAD 256
 
-__global__
-void baseline(const unsigned int* const g_vals, //INPUT
-			  unsigned int* const g_histo,      //OUPUT
-			  const unsigned int numElems) {
+__global__ void baseline(const unsigned int* const g_vals, //INPUT
+						 unsigned int* const g_histo,      //OUPUT
+						 const unsigned int numElems) {
 	
     int id = blockDim.x * blockIdx.x + threadIdx.x;
     if (id >= numElems)
@@ -54,6 +53,7 @@ __global__ void yourHisto(const unsigned int* const g_vals, //INPUT
     histo_shared[tid] = 0;
     __syncthreads();
 
+	// process multiple values per thread and achieve memory coalescing
     int idx = blockDim.x * (VALS_PER_THREAD * blockIdx.x) + threadIdx.x;
 	
     for (int i = 0; i < VALS_PER_THREAD; ++i, idx += blockDim.x) {

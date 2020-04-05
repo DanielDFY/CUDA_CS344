@@ -82,8 +82,6 @@
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 #include "utils.h"
-#define MAX(x,y) ((x)>(y)?(x):(y))
-#define MIN(x,y) ((x)<(y)?(x):(y))
 
 #define WARP_SIZE 32
 
