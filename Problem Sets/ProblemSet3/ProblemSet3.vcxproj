@@ -11,24 +11,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ProblemSets\Problem Set 3\compare.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 3\loadSaveImage.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 3\main.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 3\reference_calc.cpp" />
+    <ClCompile Include="compare.cpp" />
+    <ClCompile Include="loadSaveImage.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="reference_calc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ProblemSets\Problem Set 3\compare.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 3\loadSaveImage.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 3\reference_calc.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 3\timer.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 3\utils.h" />
+    <ClInclude Include="compare.h" />
+    <ClInclude Include="loadSaveImage.h" />
+    <ClInclude Include="reference_calc.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\ProblemSets\Problem Set 3\HW3.cu" />
-    <CudaCompile Include="..\ProblemSets\Problem Set 3\student_func.cu" />
+    <CudaCompile Include="HW3.cu" />
+    <CudaCompile Include="student_func.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="memorial_raw.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E0DF3E8C-744C-461E-848B-4170A2EC384B}</ProjectGuid>
+    <ProjectGuid>{7E83C923-BDA8-4921-ADDE-077AC9DF6EBF}</ProjectGuid>
     <RootNamespace>ProblemSet3</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

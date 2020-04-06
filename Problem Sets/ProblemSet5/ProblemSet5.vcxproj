@@ -11,19 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\ProblemSets\Problem Set 5\main.cu" />
-    <CudaCompile Include="..\ProblemSets\Problem Set 5\student.cu" />
+    <CudaCompile Include="main.cu" />
+    <CudaCompile Include="student.cu" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ProblemSets\Problem Set 5\reference_calc.cpp" />
+    <ClCompile Include="reference_calc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ProblemSets\Problem Set 5\reference_calc.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 5\timer.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 5\utils.h" />
+    <ClInclude Include="reference_calc.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{32F365DB-F1FE-49D9-8BA6-880CC40EF35D}</ProjectGuid>
+    <ProjectGuid>{9C09AA25-97A0-4AC2-AB09-5D24E30FAF94}</ProjectGuid>
     <RootNamespace>ProblemSet5</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -11,25 +11,25 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\ProblemSets\Problem Set 2\cinque_terre_small.jpg" />
+    <Image Include="cinque_terre_small.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\ProblemSets\Problem Set 2\compare.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 2\HW2.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 2\main.cpp" />
-    <ClCompile Include="..\ProblemSets\Problem Set 2\reference_calc.cpp" />
+    <ClCompile Include="compare.cpp" />
+    <ClCompile Include="HW2.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="reference_calc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ProblemSets\Problem Set 2\compare.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 2\reference_calc.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 2\timer.h" />
-    <ClInclude Include="..\ProblemSets\Problem Set 2\utils.h" />
+    <ClInclude Include="compare.h" />
+    <ClInclude Include="reference_calc.h" />
+    <ClInclude Include="timer.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="..\ProblemSets\Problem Set 2\student_func.cu" />
+    <CudaCompile Include="student_func.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D4C8175D-850E-48A1-8F58-06022CA92470}</ProjectGuid>
+    <ProjectGuid>{4601AD5C-A42A-4A0C-B4FA-4C7A7D69B043}</ProjectGuid>
     <RootNamespace>ProblemSet2</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

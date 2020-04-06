@@ -5,7 +5,7 @@
 #include "utils.h"
 #include <string>
 #include <stdio.h>
-#include "reference_clac.h"
+#include "reference_calc.h"
 #include "compare.h"
 
 void your_rgba_to_greyscale(const uchar4* const h_rgbaImage,
