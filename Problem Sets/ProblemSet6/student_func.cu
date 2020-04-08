@@ -393,9 +393,9 @@ void your_blend(const uchar4* const h_sourceImg,  //IN
     checkCudaErrors(cudaMalloc(&d_finalChannelB, channelMemSize));
 
     cudaStream_t streamChannelR, streamChannelG, streamChannelB;
-    checkCudaErrors(cudaStreamCreate(&streamChannelR));
-    checkCudaErrors(cudaStreamCreate(&streamChannelG));
-    checkCudaErrors(cudaStreamCreate(&streamChannelB));
+    checkCudaErrors(cudaStreamCreateWithFlags(&streamChannelR, cudaStreamNonBlocking));
+    checkCudaErrors(cudaStreamCreateWithFlags(&streamChannelG, cudaStreamNonBlocking));
+    checkCudaErrors(cudaStreamCreateWithFlags(&streamChannelB, cudaStreamNonBlocking));
 	
     jacobiIterate(d_sourceChannelR, d_destChannelR, numRowsSource, numColsSource, d_borderRegion, d_interiorRegion, d_finalChannelR, streamChannelR);
     jacobiIterate(d_sourceChannelG, d_destChannelG, numRowsSource, numColsSource, d_borderRegion, d_interiorRegion, d_finalChannelG, streamChannelG);
